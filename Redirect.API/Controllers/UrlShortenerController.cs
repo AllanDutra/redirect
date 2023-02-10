@@ -17,6 +17,11 @@ namespace Redirect.API.Controllers
             _httpContextAccessor = httpContextAccessor;
         }
 
+        /// <summary>
+        /// Generates a new shortened url code for the original informed url
+        /// </summary>
+        /// <param name="command"></param>
+        /// <returns></returns>
         [HttpPost("generate-new-shortened-url")]
         public async Task<IActionResult> GenerateNewShortenedUrlAsync([FromBody] GenerateNewShortenedUrlCommand command)
         {
@@ -27,6 +32,11 @@ namespace Redirect.API.Controllers
             return Ok(new { shortenedUrl = $"{baseUrl}{newShortenedUrlCode}" });
         }
 
+        /// <summary>
+        /// Redirects to the original url from the entered short url code, if the code does not exist in the database, 404 is returned.
+        /// </summary>
+        /// <param name="code">Shortened url code used to fetch the original url</param>
+        /// <returns></returns>
         [HttpGet("{code}")]
         public async Task<ActionResult> GetOriginalUrlByCodeAsync(string code)
         {
