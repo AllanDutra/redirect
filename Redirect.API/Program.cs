@@ -29,7 +29,7 @@ builder.Services.AddSwaggerGen(c =>
     {
         Title = "Redirect.API",
         Version = "v1",
-        Description = "Repository developed to practice knowledge in ASP .NET Core using C#, .NET 6, Clean Architecture, CQRS, Entity Framework Core, Dapper and Repository Standard. This project is a URL shortener and uses PostgreSQL as a database."
+        Description = "Repository developed to practice knowledge in ASP .NET Core using C#, .NET 6, Clean Architecture, CQRS, Entity Framework Core, Dapper and Repository Pattern. This project is a URL shortener and uses PostgreSQL as a database."
     });
 
     var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
